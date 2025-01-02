@@ -1,0 +1,42 @@
+/* Hide everything except the bill during printing */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    .bill,
+    .bill * {
+        visibility: visible;
+    }
+
+    .bill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .print-only {
+        display: none;
+    }
+}
+
+/* Ensure the body takes up at least the full height of the viewport */
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Flex container to align content and push footer to the bottom */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Push footer to the bottom if content is less */
+footer {
+    margin-top: auto;
+    /* This will push the footer down to the bottom */
+}
